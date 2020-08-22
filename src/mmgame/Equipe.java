@@ -55,6 +55,14 @@ public class Equipe {
     public void setCarroLvl(int carroLvl) {
         this.carroLvl = carroLvl;
     }
+
+    @Override
+    public String toString() {
+        return nome + ":\n"
+                + " orçamento= R$ " + orcam + ", Carro= " + carroLvl;
+    }
+    
+    
     
     
     

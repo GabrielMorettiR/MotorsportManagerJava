@@ -1,5 +1,7 @@
 package mmgame;
 
+import static mmgame.Funcoes.SalvaEquipes;
+import static mmgame.Funcoes.con;
 import static mmgame.Jogo.Corrida;
 import static mmgame.Funcoes.valorInt;
 import static mmgame.Jogo.Carreira;
@@ -14,6 +16,8 @@ public class MMGame {
     
     
     public static void main(String[] args) {
+        con();
+        SalvaEquipes();
         Menu();
     }
     

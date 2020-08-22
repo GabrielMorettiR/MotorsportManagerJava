@@ -18,7 +18,7 @@ public class Funcoes {
 
     public static Connection con;
     public static Statement st;
-    public Equipe[] eqp = new Equipe[10];
+    public static Equipe[] eqp = new Equipe[10];
 
     public static int valorInt() { // recebe um inteiro
         Scanner ler = new Scanner(System.in);
@@ -83,20 +83,25 @@ public class Funcoes {
         } catch (AWTException ex) {
         }
     }
+
     
-    public void SalvaEquipes(){
-        String sql = "select * from teams";
+    /*=== Adiciona os valores do BD na classe Equipe ===*/
+    public static void SalvaEquipes() {
+        String sql = "SELECT t.time_id, t.nome, t.orcamento, c.carroNvl from teams AS t, cars AS c WHERE t.time_id = c.time_id;";
         String id[] = consulta(sql, "time_id");
         String nome[] = consulta(sql, "nome");
         String orcam[] = consulta(sql, "orcamento");
         String carrolvl[] = consulta(sql, "carroNvl");
-        
-        for(int i=1; i<eqp.length;i++){}
-        
-        
-        
-        for(int i=1; i<eqp.length;i++){
-//            eqp[i] = new Equipe(id[i],nome[i],orcam[i],carrolvl[i]);
+
+        for (int i = 0; i < eqp.length; i++) {
+            int tId = Integer.parseInt(id[i]);
+            float tOrca = Float.parseFloat(orcam[i]);
+            int tCar = Integer.parseInt(carrolvl[i]);
+            eqp[i] = new Equipe(tId,nome[i],tOrca,tCar);
+        }
+
+        for (int i = 1; i < eqp.length; i++) {
+//            
         }
     }
 

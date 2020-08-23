@@ -1,3 +1,4 @@
-# MotorsportManagerJava
-Criando um jogo em java
-Tentando implementar em jFrame
+# MotorsportManager em Java
+Criando um jogo de adm de formula 1 em java
+com simulação de corrida
+modo carreira em //**construção**//
